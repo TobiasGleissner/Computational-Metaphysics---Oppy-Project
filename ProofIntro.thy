@@ -20,6 +20,8 @@ abbreviation godessential :: "(\<mu> \<Rightarrow> \<sigma>) \<Rightarrow> \<sig
   where "godessential P \<equiv> P god" 
 
 theorem "\<lfloor>closed godessential\<rfloor>"
+using S5 by blast
+(*
 proof -
   {
     fix w
@@ -45,7 +47,7 @@ proof -
   }
   thus ?thesis by blast
 qed
-  
+*)  
 (*<*)
 end
 (*>*)
