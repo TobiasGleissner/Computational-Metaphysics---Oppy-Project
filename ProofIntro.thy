@@ -19,7 +19,7 @@ consts god :: "\<mu>"
 abbreviation godessential :: "(\<mu> \<Rightarrow> \<sigma>) \<Rightarrow> \<sigma>" 
   where "godessential P \<equiv> P god" 
 
-theorem "\<lfloor>closed godessential\<rfloor>"
+theorem "\<lfloor>(\<^bold>\<not> (\<^bold>\<exists>x. (meq x god))) \<^bold>\<rightarrow> closed godessential\<rfloor>"
 using S5 by blast
 (*
 proof -

@@ -1,6 +1,6 @@
 (* Christoph Benzmüller, February 2016 *)
 (*<*)
-theory QMLS5U
+theory QML
 imports Main
 
 begin
@@ -142,7 +142,5 @@ abbreviation S5_sem :: bool
 abbreviation S5_ax :: bool
  where "S5_ax  \<equiv>  \<lfloor>M\<rfloor> \<and> \<lfloor>V\<rfloor> "
 
-
 end
-
 (*>*)
