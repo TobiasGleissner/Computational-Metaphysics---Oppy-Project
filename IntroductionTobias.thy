@@ -4,7 +4,7 @@ imports entailment
 begin
 (*>*)
 
-axiomatization where S5: "S5 \<equiv> S5_sem"
+axiomatization where S5: "S5_sem"
 
 text "Define godessential to be a property of a property."
 consts godessential :: "( \<mu> \<Rightarrow> \<sigma> ) \<Rightarrow> \<sigma>"
