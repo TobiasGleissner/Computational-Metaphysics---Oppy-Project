@@ -1,6 +1,6 @@
 (*<*)
 theory maydole
-imports ProofIntro
+imports entailment
 begin
 (*>*)
 consts greaterthan :: "\<mu> \<Rightarrow> \<mu> \<Rightarrow> \<sigma>"
@@ -14,7 +14,7 @@ axiomatization
   and A2: "\<lfloor>closed perfect\<rfloor>"
   and A3: "\<lfloor>perfect supreme\<rfloor>"
 
-theorem "\<lfloor>\<^bold>\<exists>x. supreme x \<rfloor>" 
+theorem "\<lfloor>\<^bold>\<exists>x. supreme x \<rfloor>" oops
 (*<*)
 end
 (*>*)

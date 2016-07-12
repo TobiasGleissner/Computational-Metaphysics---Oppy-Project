@@ -1,29 +1,10 @@
 (*<*)
 theory IntroductionTobias
-imports QML Main
+imports entailment
 begin
 (*>*)
 
-axiomatization where S5: "S5 \<equiv> S5_ax"
-
-text "Define entailment.
-  We shall say that one property entails a second just in case it is necessarily
-  true that anything that possesses the first property also possesses the second
-  property."
-abbreviation entails :: "( \<mu> \<Rightarrow> \<sigma> ) \<Rightarrow> ( \<mu> \<Rightarrow> \<sigma> ) \<Rightarrow> \<sigma>" ( infix "\<^enum>" 50 )
-  where "P \<^enum> Q  \<equiv> \<^bold>\<box>( \<^bold>\<forall>x. P x \<^bold>\<rightarrow> Q x ) " 
-
-text "Define the property of a set to be closed under entailment. Membership of element x
-  in the set P is given by P(x).
-  Moreover, we shall say that a collection of properties entails a further
-  property just in case it is necessarily true that anything that possesses all
-  of the properties in the collection also possesses the further property."
-abbreviation closedunderentailmentt :: "( ( \<mu> \<Rightarrow> \<sigma> ) \<Rightarrow> \<sigma> ) \<Rightarrow> \<sigma>" ( "closedt" )
-  where "closedt P \<equiv> \<^bold>\<forall> Q. P Q \<^bold>\<rightarrow> ( \<^bold>\<forall> R. Q \<^enum> R \<^bold>\<rightarrow> P R )"
-abbreviation closedunderentailment :: "( ( \<mu> \<Rightarrow> \<sigma> ) \<Rightarrow> \<sigma> ) \<Rightarrow> \<sigma>" ( "closed" )
-  where "closed P \<equiv> \<^bold>\<forall>R. \<^bold>\<forall>Q. (P (Q) \<^bold>\<and> (Q \<^enum> R)) \<^bold>\<rightarrow> P(R)"
-theorem "\<lfloor>closed P\<rfloor> \<equiv>\<lfloor>closedt P\<rfloor>"
-by smt
+axiomatization where S5: "S5 \<equiv> S5_sem"
 
 text "Define godessential to be a property of a property."
 consts godessential :: "( \<mu> \<Rightarrow> \<sigma> ) \<Rightarrow> \<sigma>"
