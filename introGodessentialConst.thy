@@ -5,6 +5,7 @@ begin
 (*>*)
 
 axiomatization where T: "T_sem"
+axiomatization where S5: "S5_sem"
 
 consts godessential :: "(\<mu> \<Rightarrow> \<sigma>) \<Rightarrow> \<sigma>"
   
@@ -26,6 +27,6 @@ shows "\<lfloor>\<^bold>\<exists>x. godlike x\<rfloor>"
 nitpick[user_axioms] 
 oops
 
+(*<*)
 end
-
 (*>*)

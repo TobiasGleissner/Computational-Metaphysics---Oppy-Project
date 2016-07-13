@@ -18,6 +18,6 @@ properties"
 abbreviation closedunderentailment::  "((\<mu> \<Rightarrow> \<sigma>) \<Rightarrow> \<sigma>) \<Rightarrow> \<sigma>" ("closed")
   where "closed (SET) \<equiv> \<^bold>\<forall>P. \<^bold>\<forall>Q. (SET P \<^bold>\<and> (P \<^enum> Q)) \<^bold>\<rightarrow> SET Q"
 
-(*>*)
+(*<*)
 end
 (*>*)
