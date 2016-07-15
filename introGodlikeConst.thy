@@ -43,6 +43,7 @@ using assms by blast
 
 (*identity is always godessential*)
 lemma "\<lfloor>(\<^bold>\<exists>P. godessential P)\<rfloor>" by blast
+lemma "\<lfloor>godessential (\<lambda>x. meq x x)\<rfloor>" by blast
 
 (*no contradiction*)
 lemma "False" nitpick[user_axioms] oops
