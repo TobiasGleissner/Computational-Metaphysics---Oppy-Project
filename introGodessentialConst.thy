@@ -23,9 +23,12 @@ oops
 
 theorem 
 assumes "\<lfloor>(\<^bold>\<exists>P. \<^bold>\<not> godessential P) \<^bold>\<and> closed godessential\<rfloor>"
-shows "\<lfloor>\<^bold>\<exists>x. godlike x\<rfloor>"
+shows "\<lfloor>\<^bold>\<diamond>(\<^bold>\<exists>x. godlike x)\<rfloor>"
 nitpick[user_axioms] 
 oops
+
+lemma "\<lfloor>(\<^bold>\<forall>x. (\<^bold>\<forall>Q. (godessential Q) \<^bold>\<rightarrow> \<^bold>\<box>(Q x)) \<^bold>\<rightarrow> (godlike x))\<rfloor>" sledgehammer[remote_leo2]
+by blast
 
 (*<*)
 end
