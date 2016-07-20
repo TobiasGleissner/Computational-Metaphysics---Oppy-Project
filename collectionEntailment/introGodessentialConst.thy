@@ -27,7 +27,7 @@ shows "\<lfloor>\<^bold>\<diamond>(\<^bold>\<exists>x. godlike x)\<rfloor>"
 nitpick[user_axioms] 
 oops
 
-lemma "\<lfloor>(\<^bold>\<forall>x. (\<^bold>\<forall>Q. (godessential Q) \<^bold>\<rightarrow> \<^bold>\<box>(Q x)) \<^bold>\<rightarrow> (godlike x))\<rfloor>" sledgehammer[remote_leo2]
+lemma "\<lfloor>(\<^bold>\<forall>x. (\<^bold>\<forall>Q. (godessential Q) \<^bold>\<rightarrow> \<^bold>\<box>(Q x)) \<^bold>\<rightarrow> (godlike x))\<rfloor>"
 by blast
 
 (*<*)

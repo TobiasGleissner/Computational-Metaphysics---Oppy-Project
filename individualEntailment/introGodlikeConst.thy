@@ -1,11 +1,10 @@
 (*<*)
 theory introGodlikeConst
-imports entailment
+imports individualEntailment
 begin
 (*>*)
 
 axiomatization where T: "T_sem"
-axiomatization where S5: "S5_sem"
 
 consts godlike :: "\<mu> \<Rightarrow> \<sigma>" 
 
