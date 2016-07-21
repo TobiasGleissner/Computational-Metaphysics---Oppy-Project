@@ -12,6 +12,11 @@ abbreviation isSubset :: "((\<mu> \<Rightarrow> \<sigma>) \<Rightarrow> \<sigma>
 
 abbreviation closedunderentailment::  "((\<mu> \<Rightarrow> \<sigma>) \<Rightarrow> \<sigma>) \<Rightarrow> \<sigma>" ("closed")
   where "closed (SET) \<equiv> \<^bold>\<forall>Q. \<^bold>\<forall>SUBSET. ((SUBSET \<^bold>\<subseteq> SET) \<^bold>\<and> (SUBSET \<^enum> Q)) \<^bold>\<rightarrow> SET Q"
+
+axiomatization where T: "T_sem"
+axiomatization where S5: "S5_sem"
+
+consts godessential :: "(\<mu> \<Rightarrow> \<sigma>) \<Rightarrow> \<sigma>"
 (*<*) 
 end
 (*>*)
