@@ -1,6 +1,6 @@
 (*<*)
 theory collectionTests
-imports introGodessentialConst
+imports introGodessentialConstNecessary
 begin
 (*>*)
 
@@ -61,6 +61,16 @@ lemma
   shows "\<lfloor>godessential godlike\<rfloor>"
 oops
 
+lemma possiblyNecessaryExistence:
+  assumes "\<lfloor>\<^bold>\<diamond>(\<^bold>\<box>(\<^bold>\<exists>x. godlike x))\<rfloor>"
+  shows "\<lfloor>\<^bold>\<box>(\<^bold>\<exists>x. godlike x)\<rfloor>"
+using S5 assms by blast
+
+lemma absurdumTest:
+  assumes "\<lfloor>godessential (\<lambda>x. \<^bold>\<box>(\<^bold>\<exists>y. meq y x))\<rfloor>"
+  assumes "\<lfloor>\<^bold>\<diamond>(\<^bold>\<exists>x. godlike x)\<rfloor>"
+  shows "\<lfloor>\<^bold>\<box>(\<^bold>\<exists>x. godlike x)\<rfloor>"
+by (metis S5 assms(2))
 (*<*)
 end
 (*>*)

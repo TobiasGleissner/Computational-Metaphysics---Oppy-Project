@@ -22,7 +22,7 @@ proof -
         hence "((\<lambda>x. \<^bold>\<bottom>) x) w" by blast
       }
       hence "(\<^bold>\<forall>x. (godlike x \<^bold>\<rightarrow> (\<lambda>x. \<^bold>\<bottom>) x)) w" by blast
-      hence "godessential (\<lambda>x. \<^bold>\<bottom>) w" by (metis assms(3) impGod)
+      hence "godessential (\<lambda>x. \<^bold>\<bottom>) w" sledgehammer[remote_satallax, verbose] by (metis assms(3) impGod)
       hence "(\<^bold>\<forall>P. godessential P) w" by (metis assms(3) impGod)
       hence "False" using assms(1) by auto
     }
