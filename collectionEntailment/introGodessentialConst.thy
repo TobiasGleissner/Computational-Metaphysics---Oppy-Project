@@ -19,6 +19,11 @@ shows "\<lfloor>\<^bold>\<diamond>(\<^bold>\<exists>x. godlike x)\<rfloor>"
 (*sledgehammer[remote_leo2, verbose, timeout = 300](assms S5)*)
 by (metis assms)
 
+(*no contradiction*)
+lemma 
+assumes "\<lfloor>(\<^bold>\<exists>P. godessential P) \<^bold>\<and> (\<^bold>\<exists>P. \<^bold>\<not> godessential P) \<^bold>\<and> closed godessential\<rfloor>"
+shows "False" nitpick[user_axioms] oops
+
 (*<*)
 end
 (*>*)

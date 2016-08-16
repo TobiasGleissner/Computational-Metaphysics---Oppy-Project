@@ -1,6 +1,6 @@
 (*<*)
 theory collectionTests
-imports introGodessentialConstNecessary
+imports introGodessentialConst
 begin
 (*>*)
 
@@ -20,8 +20,7 @@ by auto
 
 lemma andEntailmentGodessential:
   shows "\<lfloor>\<^bold>\<box>(godessential P \<^bold>\<and> godessential Q) \<^bold>\<rightarrow> (godessential \<^enum> (\<lambda>x. P x \<^bold>\<and> Q x))\<rfloor>"
-by meson
-  
+by meson  
 
 lemma andClosedGodessential:
   assumes closedGodessential: "\<lfloor>closed godessential\<rfloor>"
