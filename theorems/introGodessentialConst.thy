@@ -1,11 +1,9 @@
 (*<*)
 theory introGodessentialConst
-imports collectionEntailment
+imports "../definitions/entailment/collectionEntailment" "../definitions/god/godessentialConst"
 begin
 (*>*)
-  
-abbreviation godlike :: "\<mu> \<Rightarrow> \<sigma>" 
-  where "godlike x \<equiv> (\<^bold>\<forall>P. godessential P \<^bold>\<rightarrow> (P x))"
+
 
 theorem
 assumes "\<lfloor>\<^bold>\<exists>x. godlike x\<rfloor>"
@@ -20,7 +18,7 @@ oops
 theorem 
 assumes "\<lfloor>(\<^bold>\<exists>P. godessential P) \<^bold>\<and> (\<^bold>\<exists>P. \<^bold>\<not> godessential P) \<^bold>\<and> closed godessential\<rfloor>"
 shows "\<lfloor>\<^bold>\<diamond>(\<^bold>\<exists>x. godlike x)\<rfloor>"
-sledgehammer[remote_leo2, verbose, timeout = 300](assms S5)
+(*sledgehammer[remote_leo2, verbose, timeout = 300]*)
 by (metis assms)
 
 (*no contradiction*)

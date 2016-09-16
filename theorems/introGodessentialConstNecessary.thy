@@ -1,6 +1,6 @@
 (*<*)
 theory introGodessentialConstNecessary
-imports collectionEntailment
+imports "../definitions/god/godessentialConstNecessary" "../definitions/entailment/collectionEntailment"
 begin
 (*>*)
   

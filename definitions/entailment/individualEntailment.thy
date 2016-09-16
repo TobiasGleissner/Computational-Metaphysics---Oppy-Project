@@ -1,6 +1,6 @@
 (*<*)
 theory individualEntailment
-imports "../QML"
+imports "../../QML"
 begin
 (*>*)
  
