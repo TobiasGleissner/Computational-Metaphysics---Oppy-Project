@@ -1,6 +1,6 @@
 (*<*)
 theory introOppysProof
-imports collectionTests
+imports introGodessentialConst
 begin
 (*>*)
 

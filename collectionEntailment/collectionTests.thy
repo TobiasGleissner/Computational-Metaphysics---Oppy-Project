@@ -5,18 +5,21 @@ begin
 (*>*)
 
 lemma "False" nitpick[user_axioms] oops
-lemma True nitpick [satisfy, user_axioms, expect = genuine] by simp
+lemma True nitpick [satisfy, user_axioms, expect = genuine] by simp (*TODO was heißt das?*)
 
 (*collection entails test*)
 consts prop1 :: "(\<mu> \<Rightarrow> \<sigma>)"
 consts prop2 :: "(\<mu> \<Rightarrow> \<sigma>)"
 
-abbreviation propSet :: "(\<mu> \<Rightarrow> \<sigma>) \<Rightarrow> \<sigma>" 
-  where  "propSet P \<equiv> (\<lambda>w. ((P) = prop1) \<or> ((P) = prop2))"
+
+abbreviation propSet :: "(\<mu> \<Rightarrow> \<sigma>) \<Rightarrow> \<sigma>" (*This is the set {prop1, prop2}*)
+  where  "propSet \<equiv> (\<lambda>P.(\<lambda>w. (P = prop1) \<or> (P = prop2)))" (*the lamda w function is 
+                                                            to get from boolean to sigma*)
 
 lemma andEntailment:
-  shows "\<lfloor>(propSet) \<^enum> (\<lambda>x. prop1 x \<^bold>\<and> prop2 x)\<rfloor>"
-by auto
+  shows "\<lfloor>propSet \<^enum> (\<lambda>x. prop1 x \<^bold>\<and> prop2 x)\<rfloor>"
+by simp
+
 
 lemma andEntailmentGodessential:
   shows "\<lfloor>\<^bold>\<box>(godessential P \<^bold>\<and> godessential Q) \<^bold>\<rightarrow> (godessential \<^enum> (\<lambda>x. P x \<^bold>\<and> Q x))\<rfloor>"
