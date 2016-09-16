@@ -1,5 +1,5 @@
 (*<*)
-theory introGodessentialConst
+theory introCollectionGodessentialConst
 imports "../definitions/entailment/collectionEntailment" "../definitions/god/godessentialConst"
 begin
 (*>*)

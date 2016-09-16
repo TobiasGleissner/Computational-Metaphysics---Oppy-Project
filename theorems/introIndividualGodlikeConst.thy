@@ -1,12 +1,11 @@
 (*<*)
-theory introGodlikeConst
-imports individualEntailment
+theory introIndividualGodlikeConst
+imports "../definitions/god/godlikeConst" "../definitions/entailment/individualEntailment"
 begin
 (*>*)
 
 axiomatization where T: "T_sem"
 
-consts godlike :: "\<mu> \<Rightarrow> \<sigma>" 
 
 text "there will be a collection of properties 
 – ‘God’s essential properties’ – that God possesses of necessity"

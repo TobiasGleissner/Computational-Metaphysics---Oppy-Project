@@ -1,6 +1,6 @@
 (*<*)
 theory collectionTests
-imports introGodessentialConst
+imports "../definitions/god/godessentialConst" "../definitions/entailment/collectionEntailment" 
 begin
 (*>*)
 
@@ -63,16 +63,21 @@ lemma
   shows "\<lfloor>godessential godlike\<rfloor>"
 oops
 
+axiomatization where S5: S5_sem
+
 lemma possiblyNecessaryExistence:
   assumes "\<lfloor>\<^bold>\<diamond>(\<^bold>\<box>(\<^bold>\<exists>x. godlike x))\<rfloor>"
   shows "\<lfloor>\<^bold>\<box>(\<^bold>\<exists>x. godlike x)\<rfloor>"
 using S5 assms by blast
 
+text\<open>this models the final step of the oppy proof. the \<lambda>-function is supposed to model the property of necessary existence.
+ we are not sure of its accuracy\<close>
 lemma absurdumTest:
   assumes "\<lfloor>godessential (\<lambda>x. \<^bold>\<box>(\<^bold>\<exists>y. meq y x))\<rfloor>"
   assumes "\<lfloor>\<^bold>\<diamond>(\<^bold>\<exists>x. godlike x)\<rfloor>"
   shows "\<lfloor>\<^bold>\<box>(\<^bold>\<exists>x. godlike x)\<rfloor>"
-by (metis S5 assms(2))
+nitpick oops
+(*by (metis S5 assms(2))*)
 (*<*)
 end
 (*>*)
