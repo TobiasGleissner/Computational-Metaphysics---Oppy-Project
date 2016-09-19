@@ -7,10 +7,13 @@ begin
 lemma "False" nitpick[user_axioms] oops
 lemma True nitpick [satisfy, user_axioms, expect = genuine] by simp (*TODO was heißt das?*)
 
-(*collection entails test*)
+(*collection entails test *)
+
 consts prop1 :: "(\<mu> \<Rightarrow> \<sigma>)"
 consts prop2 :: "(\<mu> \<Rightarrow> \<sigma>)"
 
+
+text\<open>Check: A collection of properties entails the property of having all the properties in the collection\<close>
 
 abbreviation propSet :: "(\<mu> \<Rightarrow> \<sigma>) \<Rightarrow> \<sigma>" (*This is the set {prop1, prop2}*)
   where  "propSet \<equiv> (\<lambda>P.(\<lambda>w. (P = prop1) \<or> (P = prop2)))" (*the lamda w function is 
@@ -21,9 +24,16 @@ lemma andEntailment:
 by simp
 
 
+text\<open>Check: If Properties are necessarily included in a collection of properties, then this collection 
+  entails the Property of having these Properties\<close> 
+
 lemma andEntailmentGodessential:
   shows "\<lfloor>\<^bold>\<box>(godessential P \<^bold>\<and> godessential Q) \<^bold>\<rightarrow> (godessential \<^enum> (\<lambda>x. P x \<^bold>\<and> Q x))\<rfloor>"
 by meson  
+
+
+text\<open>Check: If two Properties are necessarily included in a closed collection of properties, then the Property
+   of having both Properties is also in the collection\<close>
 
 lemma andClosedGodessential:
   assumes closedGodessential: "\<lfloor>closed godessential\<rfloor>"
@@ -38,6 +48,9 @@ proof -
   }
   thus ?thesis by blast
 qed
+
+text\<open>Check: If a collection of properties contains a contradiction and it is closed, 
+then it contains every property\<close>
 
 lemma contradictionEntailsAnything:
   assumes "\<lfloor>closed godessential\<rfloor>"
@@ -56,6 +69,10 @@ lemma contradictionGodessentialFalse:
   shows "\<lfloor>godessential (\<lambda>x. \<^bold>\<bottom>)\<rfloor>"
 by (metis assms(1) assms(2))
 
+
+text\<open>Check: If a collection of properties is non-trivial and closed, 
+then the property of being "godlike" is in the collection\<close>
+
 lemma
   assumes "\<lfloor>(\<^bold>\<exists>P. \<^bold>\<not> godessential P)\<rfloor>"
   assumes "\<lfloor>(\<^bold>\<exists>P. godessential P)\<rfloor>"
@@ -65,13 +82,20 @@ oops
 
 axiomatization where S5: S5_sem
 
+text\<open>Check: the final step of Oppy's proof: the possibility of necessary existence implies 
+necessary existence. (The \<lambda>-function is supposed to model the property of necessary existence.
+We are not sure of its accuracy) \<close>
+
 lemma possiblyNecessaryExistence:
   assumes "\<lfloor>\<^bold>\<diamond>(\<^bold>\<box>(\<^bold>\<exists>x. godlike x))\<rfloor>"
   shows "\<lfloor>\<^bold>\<box>(\<^bold>\<exists>x. godlike x)\<rfloor>"
 using S5 assms by blast
 
-text\<open>this models the final step of the oppy proof. the \<lambda>-function is supposed to model the property of necessary existence.
- we are not sure of its accuracy\<close>
+
+text\<open>Check: If necessary existence is a property in a collection of properties and it 
+is possible that there is a godlike being , then it is necessary that there is a godlike being 
+(can fortunately not be proven in our formalization)\<close>
+
 lemma absurdumTest:
   assumes "\<lfloor>godessential (\<lambda>x. \<^bold>\<box>(\<^bold>\<exists>y. meq y x))\<rfloor>"
   assumes "\<lfloor>\<^bold>\<diamond>(\<^bold>\<exists>x. godlike x)\<rfloor>"
