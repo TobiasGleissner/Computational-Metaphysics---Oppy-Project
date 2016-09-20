@@ -1,6 +1,6 @@
-#Higher-Order Ontological Arguments
+# Higher-Order Ontological Arguments
 
-##Introduction
+## Introduction
 project work for the computational metaphysics course of christoph benzmueller 2016
 
 please use the following keywords for formalizations:
@@ -10,7 +10,7 @@ please use the following keywords for formalizations:
 * godessential
 * godlike
 
-##Structure of Sourcecode
+## Structure of Sourcecode
 The sourcecode is divided into 3 components: *definitions*, *theorems* and *tests*.
 All used definitions and abbreviations a stored inside the definitions subfolder. All theorem files are saved in the
 theorems folder. Every theorem must import one file of the folder *definitions/god* and one of *definitions/entailment*.
@@ -20,9 +20,10 @@ file.
 The same applies for the files in the *test* folder. All files here are to check if the abbreviations we made behave as we
 would expect.
 
-##Results (so far)
+## Results (so far)
 * godlike as constant makes no sense
 * collectionEntailment is necessary (individual entailment is not enough)
 * godessentialConstNecessary cant be sledgehammered nor nitpicked (the reconstruction of oppys proof fails at some little steps)
 * godessentialConst works out
 but isabelle proofs it using awkward facts (different path than oppy). maybe exploits some errors. not fully understood yet.
+* we only investigated the proof of possible existence of god (not necessary) since oppy did the same and then argue with the property of necessary existence. this is formalized in the absurdumTest in tests/collectionTests.thy but we are not sure if the formalization is suitable (it fails)
