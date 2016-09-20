@@ -1,14 +1,14 @@
 # Higher-Order Ontological Arguments
 
 ## Introduction
-project work for the computational metaphysics course of christoph benzmueller 2016
+Project work for the computational metaphysics course of Christoph Benzmueller 2016 at Freie Universität Berlin
 
-please use the following keywords for formalizations:
+Please use the following keywords for formalizations:
 
 * entails
-* closed
-* godessential
-* godlike
+* closed (closed under entailment)
+* godessential (a collection of properties)
+* godlike (the property of being god)
 
 ## Structure of Sourcecode
 The sourcecode is divided into 3 components: *definitions*, *theorems* and *tests*.
