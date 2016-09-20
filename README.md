@@ -21,9 +21,9 @@ The same applies for the files in the *test* folder. All files here are to check
 would expect.
 
 ## Results (so far)
-* godlike as constant makes no sense
+* godlike as a constant makes no sense
 * collectionEntailment is necessary (individual entailment is not enough)
-* godessentialConstNecessary cant be sledgehammered nor nitpicked (the reconstruction of oppys proof fails at some little steps)
-* godessentialConst works out
-but isabelle proofs it using awkward facts (different path than oppy). maybe exploits some errors. not fully understood yet.
-* we only investigated the proof of possible existence of god (not necessary) since oppy did the same and then argue with the property of necessary existence. this is formalized in the absurdumTest in tests/collectionTests.thy but we are not sure if the formalization is suitable (it fails)
+* godessentialConstNecessary can't be sledgehammered nor nitpicked (the reconstruction of oppys proof fails at some little steps)
+* godessentialConst works out.
+But Isabelle proofs it using awkward facts (different path than oppy). Maybe it exploits some errors. (not fully understood yet)
+* We only investigated the proof of possible existence of god (not necessarily) since oppy did the same and then argued with the property of necessary existence. This is formalized in the absurdumTest in tests/collectionTests.thy but we are not sure if the formalization is suitable. (it fails)
