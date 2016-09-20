@@ -23,6 +23,6 @@ would expect.
 ##Results (so far)
 * godlike as constant makes no sense
 * collectionEntailment is necessary (individual entailment is not enough)
-* godlikeConstNecessary cant be sledgehammered nor nitpicked (the reconstruction of oppys proof fails at some little steps)
-* godlikeConst works out
+* godessentialConstNecessary cant be sledgehammered nor nitpicked (the reconstruction of oppys proof fails at some little steps)
+* godessentialConst works out
 but isabelle proofs it using awkward facts (different path than oppy). maybe exploits some errors. not fully understood yet.
