@@ -27,9 +27,10 @@ proof -
         hence "((\<lambda>x. \<^bold>\<bottom>) x) w" by blast
       }
       hence "(\<^bold>\<forall>x. (godlike x \<^bold>\<rightarrow> (\<lambda>x. \<^bold>\<bottom>) x)) w" by blast
-      (*hence "(godessential \<^enum> ((\<lambda>x. \<^bold>\<bottom>) ) )w" sledgehammer[remote_satallax ] using impGod by auto*)
-      hence "godessential (\<lambda>x. \<^bold>\<bottom>) w" (* sledgehammer[remote_satallax, verbose]*) by (metis assms(3) impGod) (*Isabell directly shows FALSE hence this steps are only to visualize Oppie's proofs*)
-      hence "(\<^bold>\<forall>P. godessential P) w" by (metis assms(3) impGod)
+      have "(godessential \<^enum> ((\<lambda>x. \<^bold>\<bottom>)))w" using impGod by auto
+      hence A: "godessential (\<lambda>x. \<^bold>\<bottom>) w" by (metis assms(3))
+      have "(\<^bold>\<forall>P. (\<lambda>p. \<lambda>i. p = (\<lambda>x. \<^bold>\<bottom>)) \<^enum> P) w" by auto
+      with this A have "(\<^bold>\<forall>P. godessential P) w" by (metis \<open>(\<^bold>\<box>(\<lambda>v. \<forall>x. (\<forall>xa. (godessential xa \<^bold>\<rightarrow> xa x) v) \<longrightarrow> False)) w\<close> assms(3))
       hence "False" using assms(1) by auto
     }
     hence "(\<^bold>\<diamond>(\<^bold>\<exists>x. godlike x)) w" by blast
