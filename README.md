@@ -22,7 +22,7 @@ would expect.
 
 ## Results (so far)
 * godlike as a constant makes no sense
-* collectionEntailment is necessary (individual entailment is not enough)
+* collectionEntailment is necessary (individual entailment is not enough) (see tests/individualTests.thy)
 * godessentialConstNecessary can't be sledgehammered nor nitpicked (the reconstruction of oppys proof fails at some little steps)
 * godessentialConst works out.
 But Isabelle proofs it using awkward facts (different path than oppy). Maybe it exploits some errors. (not fully understood yet)
