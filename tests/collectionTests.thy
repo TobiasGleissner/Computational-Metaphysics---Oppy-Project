@@ -1,6 +1,7 @@
 (*<*)
 theory collectionTests
-imports "../definitions/god/godessentialConst" "../definitions/entailment/collectionEntailment" 
+(*imports "../definitions/god/godessentialConst" "../definitions/entailment/collectionEntailment"*)
+imports "../definitions/god/godessentialConstNecessary" "../definitions/entailment/collectionEntailment"
 begin
 (*>*)
 
@@ -100,8 +101,8 @@ lemma absurdumTest:
   assumes "\<lfloor>godessential (\<lambda>x. \<^bold>\<box>(\<^bold>\<exists>y. meq y x))\<rfloor>"
   assumes "\<lfloor>\<^bold>\<diamond>(\<^bold>\<exists>x. godlike x)\<rfloor>"
   shows "\<lfloor>\<^bold>\<box>(\<^bold>\<exists>x. godlike x)\<rfloor>"
-nitpick oops
-(*by (metis S5 assms(2))*)
+(*nitpick oops*)
+by (metis S5 assms(2))
 (*<*)
 end
 (*>*)
